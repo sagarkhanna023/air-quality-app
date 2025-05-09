@@ -1,5 +1,8 @@
 # streamlit_app/requirements.txt
-streamlit
 pandas
 joblib
 scikit-learn
+folium
+streamlit
+matplotlib
+plotly
