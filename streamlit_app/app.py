@@ -4,7 +4,7 @@ import streamlit as st
 import pandas as pd
 import joblib
 import os
-from utils import predict_aqi, get_threshold_table, get_city_pollutants, get_station_pollution_summary 
+from utils import classify_aqi_from_thresholds, predict_aqi, get_threshold_table, get_city_pollutants, get_station_pollution_summary 
 import folium
 from streamlit_folium import st_folium
 import plotly.express as px
@@ -43,10 +43,15 @@ with col1:
 with col2:
     pollutant_max = st.number_input(f"Enter Maximum {pollutant} Value", min_value=0.0)
 
-if st.button("Predict AQI Level"):
-    prediction = predict_aqi(pollutant, pollutant_min, pollutant_max)
-    st.success(f" Predicted AQI Level: **{prediction}**")
+method = st.radio("Select Prediction Method", ["Model-Based", "Threshold-Based"], horizontal=True)
 
+if st.button("Predict AQI Level"):
+    if method == "Model-Based":
+        prediction = predict_aqi(pollutant, pollutant_min, pollutant_max)
+        st.success(f"🔍 **Model Prediction**: {prediction}")
+    else:
+        prediction = classify_aqi_from_thresholds(pollutant, pollutant_min, pollutant_max)
+        st.success(f"📏 **Threshold-Based Classification**: {prediction}")
 # --- Sidebar: City-based selection ---
 st.sidebar.header("Choose from City Data")
 
