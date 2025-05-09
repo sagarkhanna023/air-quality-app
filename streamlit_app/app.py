@@ -12,9 +12,10 @@ import base64
 
 # Load model and data
 MODEL_PATH = "models/pollution_classifier.pkl"
-ENCODER_PATH = os.path.join("..", "models", "label_encoders.pkl")
-DATA_PATH = os.path.join("..", "data", "processed", "air_quality_cleaned.csv")
+ENCODER_PATH = "models/label_encoders.pkl"
+DATA_PATH = "data/processed/air_quality_cleaned.csv"
 
+# Load the model, label encoders, and dataset
 model = joblib.load(MODEL_PATH)
 le_pollutant, le_label = joblib.load(ENCODER_PATH)
 df = pd.read_csv(DATA_PATH)
