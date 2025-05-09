@@ -6,8 +6,7 @@ This project analyzes real-time air quality data collected across various cities
 ## 🔧 Tech Stack
 - Python (Pandas, Matplotlib, Scikit-learn)
 - Power BI
-- MySQL (optional)
-- Alteryx (optional)
+- Streamlit
 - VS Code + GitHub
 
 ## 📁 Folder Structure
@@ -22,10 +21,5 @@ This project analyzes real-time air quality data collected across various cities
 - Time-Series Forecasting
 - Geo-Spatial Visualization
 - Power BI Dashboard Integration
+- Streamlit App Deployment
 
-## 📌 Status
-✅ Setup Done  
-⬜ Data Cleaning  
-⬜ Analysis & Modeling  
-⬜ Dashboard Development  
-⬜ Deployment  
