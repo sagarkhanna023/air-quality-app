@@ -11,7 +11,7 @@ import plotly.express as px
 import base64
 
 # Load model and data
-MODEL_PATH = os.path.join("..", "models", "pollution_classifier.pkl")
+MODEL_PATH = "models/pollution_classifier.pkl"
 ENCODER_PATH = os.path.join("..", "models", "label_encoders.pkl")
 DATA_PATH = os.path.join("..", "data", "processed", "air_quality_cleaned.csv")
 
