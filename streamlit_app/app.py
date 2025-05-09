@@ -48,10 +48,10 @@ method = st.radio("Select Prediction Method", ["Model-Based", "Threshold-Based"]
 if st.button("Predict AQI Level"):
     if method == "Model-Based":
         prediction = predict_aqi(pollutant, pollutant_min, pollutant_max)
-        st.success(f"🔍 **Model Prediction**: {prediction}")
+        st.success(f" **Model Prediction**: {prediction}")
     else:
         prediction = classify_aqi_from_thresholds(pollutant, pollutant_min, pollutant_max)
-        st.success(f"📏 **Threshold-Based Classification**: {prediction}")
+        st.success(f" **Threshold-Based Classification**: {prediction}")
 # --- Sidebar: City-based selection ---
 st.sidebar.header("Choose from City Data")
 
