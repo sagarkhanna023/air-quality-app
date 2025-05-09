@@ -2,8 +2,8 @@ import pandas as pd
 import joblib
 
 # Load model and encoders
-MODEL_PATH = "../models/pollution_classifier.pkl"
-ENCODERS_PATH = "../models/label_encoders.pkl"
+MODEL_PATH = "models/pollution_classifier.pkl"
+ENCODERS_PATH = "models/label_encoders.pkl"
 model = joblib.load(MODEL_PATH)
 le_pollutant, le_label = joblib.load(ENCODERS_PATH)
 
