@@ -7,6 +7,14 @@ ENCODERS_PATH = "models/label_encoders.pkl"
 model = joblib.load(MODEL_PATH)
 le_pollutant, le_label = joblib.load(ENCODERS_PATH)
 
+def classify_aqi_from_thresholds(pollutant, min_val, max_val):
+    from . import POLLUTANT_THRESHOLDS
+    avg_val = (min_val + max_val) / 2
+    for low, high, label in POLLUTANT_THRESHOLDS.get(pollutant, []):
+        if low <= avg_val <= high:
+            return label
+    return "Unknown"
+
 # City filter helper
 def get_city_pollutants(df, city):
     """Return pollutants available for a given city."""
